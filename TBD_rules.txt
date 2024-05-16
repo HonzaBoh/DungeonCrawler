@@ -1,0 +1,61 @@
+Tahová RPG:
+Rogue-like (PO každém průběhu se char změní)
+Mechanika:
+Procházím 'věž' (enemy area)
+--group, 1-4
+Combat: turn-based (user-input = akce)
+DMG: 
+scénář: Character útočí na jiný
+DMG, co dostane = base DMGchar - DEFenemy
+
+Hráč ovládá:
+Group:
+Character[] 
+restPoints (int) 
+
+Group se skládá z (1-4): 
+character:
+Name
+Level
+HP (level),
+	current HP
+	max HP
+speed = (int, priorita v tazích) 
+DMG = DMG base (level based) + weaponDMG 
+DEF = base + armour
+
+>Weapon
+DMG
+Name
+CritChance = (0-95 %)
+CritDmg = (100 % +)
+
+>Armour
+Name
+DEF value
+>Gold (int)
+
+Mimo combat:
+akce:
+a)in-game:
+continue (jdu dál)/rest (50 % heal maxHP, )
+
+b)hub:
+1) Into dungeon
+2) shop
+Item/gold
+Add: sell
+3) inn (recruit, group management)
+
+Recruit:
+predefined chars, musí se koupit (trvalo)
+-----
+Design
+Character:
+
+a) playable character
+ >XP
+ >gold
+b) enemy
+ >bounty (loot)
+
