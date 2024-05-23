@@ -11,17 +11,14 @@ DMG, co dostane = base DMGchar - DEFenemy
 Hráč ovládá:
 Group:
 Character[] 
-restPoints (int) 
 
 Group se skládá z (1-4): 
 character:
 Name
-Level
 HP (level),
 	current HP
 	max HP
-speed = (int, priorita v tazích) 
-DMG = DMG base (level based) + weaponDMG 
+DMG = DMG base  + weaponDMG
 DEF = base + armour
 
 >Weapon

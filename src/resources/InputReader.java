@@ -1,14 +1,16 @@
+package resources;
+
 import java.util.Scanner;
 
 public class InputReader {
     private static final Scanner sc = new Scanner(System.in);
 
-    static String readText(String prompt){
+    public static String readText(String prompt){
         System.out.println(prompt);
         return sc.nextLine();
     }
 
-    static int readChoice(String[] choices){
+    public static int readChoice(String[] choices){
         int choice;
         do {
             System.out.println("Vyber možnost:");
