@@ -9,9 +9,9 @@ public class Character {
     Weapon weapon;
     Armor armor;
 
-    public Character(String name, int HP, int maxHP, int damage, int critChance) {
+    public Character(String name, int maxHP, int damage, int critChance) {
         this.name = name;
-        this.HP = HP;
+        this.HP = maxHP;
         this.maxHP = maxHP;
         this.damage = damage;
         this.critChance = critChance;
@@ -25,15 +25,33 @@ public class Character {
     public void getCharacterSheet(){
         System.out.println("Name: " + name);
         System.out.println("HP: [" + HP + "/" + maxHP + "]");
-        System.out.println("Max DMG: " + damage);
-        System.out.println("Armor value: " + armor);
-        System.out.println("Critical chance: " + critChance);
+        System.out.println("Max DMG: " + getMaxDMG());
+        System.out.println("Armor value: " + getArmor());
+        System.out.println("Critical chance: " + getCritChance() + " %");
     }
 
 
 
     int getDamageValue(){
-        return 0;
+//        if ((int)(Math.random() * 100 + 1) <= (critChance + weapon.critChance)){
+//            System.out.println(name + " landed a critical strike");
+//            return (damage + weapon.damage) * 2;
+//        }
+//
+////        return (damage + weapon.damage) ;
+        if (weapon == null){
+            return (int)(Math.random() * 100 + 1) <= critChance ? damage * 2 : damage;
+        }
+
+        return (int)(Math.random() * 100 + 1) <= (critChance + weapon.critChance) ? (damage + weapon.damage) * 2 : (damage + weapon.damage);
+    }
+
+    public int getMaxDMG(){
+       return  weapon == null ? damage : damage + weapon.damage;
+    }
+
+    public int getCritChance(){
+        return  weapon == null ? critChance : critChance + weapon.critChance;
     }
 
     public void equipWeapon(Weapon weapon){
