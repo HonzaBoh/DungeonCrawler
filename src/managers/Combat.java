@@ -22,6 +22,7 @@ public class Combat {
         pool.addAll(enemyGroup.getMembers());
         Collections.shuffle(pool);
         turns = new LinkedList<>(pool);
+        System.out.println("test....");
         getCombatPriorities();
         System.out.println("TODO: combat...");
     }
